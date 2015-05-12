@@ -39,7 +39,7 @@ public class Customer {
 			double thisAmount = 0;
 			Rental each = rentals.next();
 			// determine amounts for each line
-			thisAmount = amoutFor(thisAmount, each);
+			thisAmount = amoutFor(each);
 			
 			// add frequent renter points
 			frequentRenterPoints++;
@@ -59,7 +59,8 @@ public class Customer {
 		return result;
 	}
 
-	private double amoutFor(double thisAmount, Rental each) {
+	private double amoutFor(Rental each) {
+		double thisAmount = 0;
 		switch (each.getMovie().getPriceCode()) {
 		case Movie.REGULAR:
 			thisAmount += 2;
