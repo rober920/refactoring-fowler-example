@@ -7,9 +7,9 @@ public class Children extends MovieType {
 	}
 
 	@Override
-	int getMovietype() {
+	public int getMovietype() {
 		
-		return Movie.CHILDRENS;
+		return MovieType.CHILDRENS;
 	}
 
 }
