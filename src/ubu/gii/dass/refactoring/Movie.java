@@ -18,10 +18,12 @@ public class Movie {
 
 	private String _title;
 	private int _priceCode;
+	private MovieType _type;
 
 	public Movie(String title, int priceCode) {
 		_title = title;
 		_priceCode = priceCode;
+		
 	}
 
 	public int getPriceCode() {
@@ -65,5 +67,13 @@ public class Movie {
 				&& rental.getDaysRented() > 1)
 			frequentRenterPoints++;
 		return frequentRenterPoints;
+	}
+	
+	public MovieType getType(){
+		return _type;
+	}
+	
+	void setType(MovieType type){
+		_type=type;
 	}
 }
