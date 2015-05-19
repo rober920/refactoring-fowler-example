@@ -2,10 +2,10 @@ package ubu.gii.dass.refactoring;
 /**
  * Tema Refactorizaciones
  * 
- * Ejemplo de aplicación de refactorizaciones. Actualizado para colecciones
- * genéricas de java 1.5
+ * Ejemplo de aplicaciï¿½n de refactorizaciones. Actualizado para colecciones
+ * genï¿½ricas de java 1.5
  * 
- * @author M. Fowler y <A HREF="mailto:clopezno@ubu.es">Carlos López</A>
+ * @author M. Fowler y <A HREF="mailto:clopezno@ubu.es">Carlos Lï¿½pez</A>
  * @version 1.1
  * @see java.io.File
  * 
@@ -34,5 +34,36 @@ public class Movie {
 
 	public String getTitle() {
 		return _title;
+	}
+
+	public double getCharge(Rental rental) {
+		double result = 0;
+		switch (rental.getMovie().getPriceCode()) {
+		case Movie.REGULAR:
+			result += 2;
+			if (rental.getDaysRented() > 2)
+				result += (rental.getDaysRented() - 2) * 1.5;
+			break;
+		case Movie.NEW_RELEASE:
+			result += rental.getDaysRented() * 3;
+			break;
+		case Movie.CHILDRENS:
+			result += 1.5;
+			if (rental.getDaysRented() > 3)
+				result += (rental.getDaysRented() - 3) * 1.5;
+			break;
+		}
+		return result;
+	}
+
+	public int getFrequentRenterPoints(Rental rental) {
+		int frequentRenterPoints=0;
+		// add frequent renter points
+		frequentRenterPoints++;
+		// add bonus for a two day new release rental
+		if ((rental.getMovie().getPriceCode() == Movie.NEW_RELEASE)
+				&& rental.getDaysRented() > 1)
+			frequentRenterPoints++;
+		return frequentRenterPoints;
 	}
 }
