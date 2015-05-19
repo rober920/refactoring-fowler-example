@@ -6,4 +6,10 @@ public class Regular extends MovieType {
 		// TODO Auto-generated constructor stub
 	}
 
+	@Override
+	int getMovietype() {
+		
+		return Movie.REGULAR;
+	}
+
 }

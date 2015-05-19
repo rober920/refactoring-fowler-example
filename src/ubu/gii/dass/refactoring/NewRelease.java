@@ -6,4 +6,10 @@ public class NewRelease extends MovieType {
 		// TODO Auto-generated constructor stub
 	}
 
+	@Override
+	int getMovietype() {
+		
+		return Movie.NEW_RELEASE;
+	}
+
 }

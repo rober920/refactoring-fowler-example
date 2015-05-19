@@ -6,4 +6,10 @@ public class Children extends MovieType {
 		// TODO Auto-generated constructor stub
 	}
 
+	@Override
+	int getMovietype() {
+		
+		return Movie.CHILDRENS;
+	}
+
 }

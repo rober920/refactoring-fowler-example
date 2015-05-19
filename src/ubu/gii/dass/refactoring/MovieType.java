@@ -4,7 +4,7 @@ public abstract class MovieType {
 
 	
 	
-
+	abstract int getMovietype();
 	
 	
 }
