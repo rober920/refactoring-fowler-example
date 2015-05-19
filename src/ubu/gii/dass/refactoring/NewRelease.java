@@ -8,8 +8,15 @@ public class NewRelease extends MovieType {
 
 	@Override
 	public int getMovietype() {
-		
+
 		return MovieType.NEW_RELEASE;
+	}
+
+	@Override
+	public double getCharge(Rental rental) {
+		double result = 0;
+		result += rental.getDaysRented() * 3;
+		return result;
 	}
 
 }

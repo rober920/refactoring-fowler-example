@@ -19,8 +19,18 @@ public class Movie {
 	public Movie(String title, int priceCode) {
 		_title = title;
 		_priceCode = priceCode;
+		setPriceCode(priceCode);
 		
-		switch (priceCode) {
+		
+	}
+
+	public int getPriceCode() {
+		return _priceCode;
+	}
+
+	public void setPriceCode(int arg) {
+		_priceCode = arg;
+		switch (arg) {
 		case MovieType.CHILDRENS:
 			setType(new Children());
 			break;
@@ -33,15 +43,6 @@ public class Movie {
 		default:
 			break;
 		}
-		
-	}
-
-	public int getPriceCode() {
-		return _priceCode;
-	}
-
-	public void setPriceCode(int arg) {
-		_priceCode = arg;
 	}
 
 	public String getTitle() {
